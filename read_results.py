@@ -12,7 +12,6 @@ def read_result_json(path):
 def read_results_json():
 	results = []
 	for f in os.listdir("./kg-gen/MINE/KGs"):
-		print(f)
 		if f.endswith("_results.json"):
 			result = read_result_json("./kg-gen/MINE/KGs/" + f)
 			results.append(result)
