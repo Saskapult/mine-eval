@@ -1,6 +1,6 @@
 python3 generate_data.py
 
-cd kg-gen/MINE
+cd kg-gen-repo/MINE
 python3 evaluation.py
 cd ../..
 

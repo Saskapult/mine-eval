@@ -4,7 +4,7 @@ Evaluates a given LLM's performance with kg-gen using MINE.
 Usage:
 - Set your OPENAI_API_KEY environment variable (`export OPENAI_API_KEY="<your key here>"`)
 - Run `generate_data.py`
-- Run `kg-gen/MINE/evaluation.py`
+- Run `kg-gen-repo/MINE/evaluation.py`
 - Run `read_results.py`
 
 Or simply run `run_all.sh` to do all of that for you (except for the api key part). 
