@@ -4,7 +4,7 @@ from kg_gen import KGGen, Graph
 import time
 
 
-essays_path = "./kg-gen/MINE/essays.json"
+essays_path = "./kg-gen-repo/MINE/essays.json"
 
 
 def make_graphs(model, just_one=False):
@@ -19,9 +19,6 @@ def make_graphs(model, just_one=False):
 	graphs = []
 	for i, essay in enumerate(essays):
 		print(f"Evaluating essay {i+1}/{len(essays)}")
-		if model == "openai/gpt-4o" and i in [60, 77]:
-			print("Skipped due to GPT-4o errors")
-			continue
 
 		topic = essay["topic"]
 		content = essay["content"]

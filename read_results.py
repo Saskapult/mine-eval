@@ -28,7 +28,7 @@ def result_sum(results):
 
 
 def main():
-	files = read_results_json("./kg-gen/MINE/KGs")
+	files = read_results_json("./kg-gen-repo/MINE/KGs")
 	scores_accuracy_sum = 0.0
 	for file in files:
 		count, score_sum = result_sum(file)
