@@ -31,7 +31,7 @@ models.
 | Model | Mean Accuracy (%) |
 | - | - |
 | openai/gpt-4o-mini | 36.38 | 
-| openai/gpt-4o* | idk |
+| openai/gpt-4o | not computed\* |
 
 \*
 Some essays are omitted from the GPT-4o evaluation due to errors. 
