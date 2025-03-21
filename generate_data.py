@@ -1,6 +1,7 @@
 import os
 import json
 from kg_gen import KGGen, Graph
+import time
 
 
 essays_path = "./kg-gen/MINE/essays.json"
@@ -12,12 +13,16 @@ def make_graphs(model, just_one=False):
 		essays = json.load(f)
 	
 	kg = KGGen(
-		# model=model,
+		model=model,
 		api_key=os.getenv("OPENAI_API_KEY"),
 	)
 	graphs = []
 	for i, essay in enumerate(essays):
 		print(f"Evaluating essay {i+1}/{len(essays)}")
+		if model == "openai/gpt-4o" and i in [60, 77]:
+			print("Skipped due to GPT-4o errors")
+			continue
+
 		topic = essay["topic"]
 		content = essay["content"]
 		graph = kg.generate(
@@ -55,9 +60,17 @@ def load_graph_json(path):
 
 
 def main():
-	model = "openai/gpt-4o-mini"
+	model = os.getenv("MODEL_TO_TEST", "openai/gpt-4o")
+	print(f"Generating results for model '{model}'")
 
-	graphs = make_graphs(model, just_one=True)
+	start = time.time()
+
+	# graphs = make_graphs(model, just_one=True)
+	graphs = make_graphs(model)
+
+	end = time.time()
+	duration = end - start
+	print(f"That took {duration:.2f} seconds")
 
 	if os.path.exists("./kg-gen/MINE/KGs"):
 		print("Trashing old data")
