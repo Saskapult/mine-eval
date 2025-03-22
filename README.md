@@ -31,12 +31,13 @@ models.
 | Model | Mean Accuracy (%) |
 | - | - |
 | openai/gpt-4o-mini | 36.38 | 
-| openai/gpt-4o | not computed\* |
+| openai/gpt-4o | 46.86\* |
 
 \*
-Some essays are omitted from the GPT-4o evaluation due to errors. 
-Essay 61 is skipped because it creates too many values. 
-Essay 78 is skipped because it creates too few values. 
-This is addressed in https://github.com/stair-lab/kg-gen/pull/8. 
+The kg-gen package as written throws errors when working with essays 61 and 78. 
+This evaluation uses fixes found in https://github.com/stair-lab/kg-gen/pull/8. 
 
-<!-- The paper result is 66.07% -->
+<!-- 
+The paper result is 66.07% for GPT-4o. 
+I am not sure why this is so much lower! 
+-->

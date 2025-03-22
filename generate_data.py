@@ -69,14 +69,14 @@ def main():
 	duration = end - start
 	print(f"That took {duration:.2f} seconds")
 
-	if os.path.exists("./kg-gen/MINE/KGs"):
+	if os.path.exists("./kg-gen-repo/MINE/KGs"):
 		print("Trashing old data")
-		os.system("trash ./kg-gen/MINE/KGs")
-	os.makedirs("./kg-gen/MINE/KGs")
+		os.system("trash ./kg-gen-repo/MINE/KGs")
+	os.makedirs("./kg-gen-repo/MINE/KGs")
 
 	for i, graph in enumerate(graphs):
 		print(f"Saving graph {i+1}/{len(graphs)}")
-		save_graph_json(graph, "./kg-gen/MINE/KGs/" + f"{i+1}.json")
+		save_graph_json(graph, "./kg-gen-repo/MINE/KGs/" + f"{i+1}.json")
 
 
 if __name__ == "__main__":
