@@ -32,6 +32,7 @@ models.
 | - | - |
 | openai/gpt-4o-mini | 36.38 | 
 | openai/gpt-4o | 46.86\* |
+| ollama/phi4 | 24.32\*\* |
 
 \*
 The kg-gen package as written throws errors when working with essays 61 and 78. 
@@ -41,3 +42,6 @@ This evaluation uses fixes found in https://github.com/stair-lab/kg-gen/pull/8.
 The paper result is 66.07% for GPT-4o. 
 I am not sure why this is so much lower! 
 -->
+
+\*\*
+Modifications were made to the dspy package to poperly handle the LLM's inconsistent output format. 
